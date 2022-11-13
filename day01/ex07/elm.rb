@@ -72,15 +72,28 @@ def print_content info_file, file
 end
 
 def process
-  file = File.open("periodic_table.html",  'w')
-  info_file = File.open('./periodic_table.txt', 'r')
+  begin
+    file = File.open("periodic_table.html",  'w')
+    info_file = File.open('./periodic_table.txt', 'r')
+  rescue SystemCallError => e
+    puts e.message
+    if !file.closed?
+      file.close
+    end
+    exit
+  end
 
-  print_header file
-  print_content info_file, file
-  print_footer file
+  begin
+    print_header file
+    print_content info_file, file
+    print_footer file
+  rescue IOError => e
+    puts e.message
+  ensure
+    file.close
+    info_file.close
+  end
 
-  file.close
-  info_file.close
 end
 
 process
