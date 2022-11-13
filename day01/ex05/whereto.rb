@@ -29,10 +29,6 @@ def get_result_string elem
   "#{elem} is neither a capital city nor a state"
 end
 
-def process arr
-  arr.map{|el| get_result_string el}
-end
-
 def parse argv
   exit if argv.length != 1
   arr = argv[0].split ','
@@ -44,7 +40,7 @@ end
 
 def process
   arr = parse ARGV
-  puts process arr
+  puts arr.map{|el| get_result_string el}
 end
 
 process
