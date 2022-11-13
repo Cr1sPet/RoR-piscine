@@ -42,4 +42,9 @@ def parse argv
   end
 end
 
-puts process (parse ARGV)
+def process
+  arr = parse ARGV
+  puts process arr
+end
+
+process

@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def get_data
   [['Caleb' , 24],
   ['Calixte' , 84],
@@ -23,4 +25,8 @@ def get_hash
   data.to_h {|obj| [obj[1], obj[0]]}
 end
 
-get_hash.each { |key, value| puts "#{key} : #{value}" }
+def process
+  get_hash.each { |key, value| puts "#{key} : #{value}" }
+end
+
+process

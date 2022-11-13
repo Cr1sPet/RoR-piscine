@@ -1,4 +1,6 @@
-def my_var
+#!/usr/bin/env ruby
+
+def puts_var_info
   a = 10
   b = "10"
   c = nil
@@ -10,4 +12,4 @@ def my_var
   puts "d contains: #{d} and is a type: #{d.class}"
 end
 
-my_var
+puts_var_info

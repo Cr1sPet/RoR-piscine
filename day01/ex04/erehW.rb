@@ -33,4 +33,8 @@ def parse argv
  argv[0]
 end
 
-puts get_state_by_capital parse ARGV
+def process
+  puts get_state_by_capital parse ARGV
+end
+
+process

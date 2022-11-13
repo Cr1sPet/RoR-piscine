@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 
 def read_file file_name
   file = File.new(file_name, 'r:UTF-8')
@@ -13,8 +14,10 @@ def complete file_name
 
   content = read_file file_name
   content.tr ',', ''
-  # content
 
 end
 
-puts complete './numbers.txt'
+def process
+  puts complete './numbers.txt'
+end
+process
