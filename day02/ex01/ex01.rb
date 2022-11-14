@@ -69,9 +69,31 @@ end
 
 
 if $PROGRAM_NAME == __FILE__
-  a = Html.new "generated"
-  10.times{|el| a.dump "test_p_#{el}"}
-  a.finish
+  a = nil
+  begin
+    a = Html.new "generated"
+    a = Html.new "generated"
+
+    rescue RuntimeError => e
+      puts e.message
+  end
+
+  a.dump 'test'
+
+  begin
+    a.finish
+    a.finish
+    rescue RuntimeError => e
+      puts e.message
+  end
+
+  begin
+
+    a.dump 'test'
+
+    rescue RuntimeError => e
+      puts e.message
+  end
 end
 
 # require_relative "ex01.rb"
